@@ -6,8 +6,3 @@ name_dc                = "DC-DTX1"
 name_vsphere_datastore = "ds001-test-svc1-stor3-dtx1"
 name_vsphere_network   = "CTT-Stage2022"
 name_vsphere_cluster   = "Clu001-PROD"
-
-//mpppp
-
-
-""""
