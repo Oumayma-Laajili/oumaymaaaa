@@ -6,5 +6,3 @@ variable "name_rp" {}
 variable "name_vsphere_datastore" {}
 variable "name_vsphere_network" {}
 variable "name_vsphere_cluster" {}
-
-gjhbdzjbdjvdhjavdhjavdajvavdvdjavdjvdav
