@@ -51,7 +51,7 @@ data "vsphere_virtual_machine" "template" {
 # Set vm parameters
 resource "vsphere_virtual_machine" "demoo" {
   count = "3"
-  name  = "new-ressources-${count.index + 1}"
+  name  = "ressouce-${count.index + 1}"
   //name             = "vm_pfe"
   num_cpus         = 4
   memory           = 4096
