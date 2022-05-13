@@ -98,13 +98,7 @@ ipv4_gateway = "10.203.18.254"
   }
 
 
-/*extra_config = {
-   "guestinfo.userdata"  = base64encode(file("../Scripts/userdata.yaml"))
-   "guestinfo.userdata.encoding" = "base64"
-    "guestinfo.metadata" = base64encode(file("../Scripts/metadata.yaml"))
-   "guestinfo.metadata.encoding" = "base64"
 
- }*/
 
   }
 
