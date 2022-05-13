@@ -50,8 +50,8 @@ data "vsphere_virtual_machine" "template" {
 
 # Set vm parameters
 resource "vsphere_virtual_machine" "demoo" {
-  count="3"
-  name ="vm-${count.index + 1}"
+  count = "3"
+  name  = "new-ressources-${count.index + 1}"
   //name             = "vm_pfe"
   num_cpus         = 4
   memory           = 4096
@@ -80,26 +80,26 @@ resource "vsphere_virtual_machine" "demoo" {
   clone {
     template_uuid = data.vsphere_virtual_machine.template.id
 
-customize {
-  linux_options {
-    host_name = "terraform"
-    domain    = "cloud-temple.lan"
+    customize {
+      linux_options {
+        host_name = "terraform"
+        domain    = "cloud-temple.lan"
+      }
+
+
+      network_interface {
+        ipv4_address = "10.203.18.${100 + count.index}"
+        ipv4_netmask = 24
+      }
+
+      ipv4_gateway = "10.203.18.254"
+    }
   }
 
 
-network_interface {
-ipv4_address = "10.203.18.${100 + count.index}"
-  ipv4_netmask = 24
+
+
 }
-
-ipv4_gateway = "10.203.18.254"
-}
-  }
-
-
-
-
-  }
 
 
 
