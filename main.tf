@@ -9,7 +9,6 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
-##Datazz "hjbjbhjb"
 
 data "vsphere_datacenter" "dc" {
   name = var.name_dc
@@ -41,7 +40,7 @@ data "vsphere_compute_cluster" "cluster" {
 
 # Retrieve template information on vsphere
 data "vsphere_virtual_machine" "template" {
-  name          = "VM_ubutnu_template"
+  name          = "Ubuntu-Template-S"
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
@@ -52,7 +51,7 @@ data "vsphere_virtual_machine" "template" {
 # Set vm parameters
 resource "vsphere_virtual_machine" "demoo" {
   count="3"
-  name ="test-vm-${count.index + 1}"
+  name ="vm-${count.index + 1}"
   //name             = "vm_pfe"
   num_cpus         = 4
   memory           = 4096
@@ -83,13 +82,13 @@ resource "vsphere_virtual_machine" "demoo" {
 
 customize {
   linux_options {
-    host_name = "terraform-test"
+    host_name = "terraform"
     domain    = "cloud-temple.lan"
   }
 
 
 network_interface {
-ipv4_address = "10.203.18.${13 + count.index}"
+ipv4_address = "10.203.18.${100 + count.index}"
   ipv4_netmask = 24
 }
 
